@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>解体業者ホームページ</title>
+    <style>
+        body {
+            font-family: serif; /* 明朝体を使用 */
+            margin: 0;
+            padding: 0;
+            background-color: white;
+            color: black;
+        }
+
+        html, body {
+            scroll-padding-top: 80px; /* スクロール時の余白を80pxに設定 */
+        }
+
+        .header {
+            background-color: #0056b3; /* 濃い青色 */
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px; /* ヘッダーのパディングを小さく調整 */
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            height: 50px; /* ヘッダーの高さを小さく設定 */
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 24px; /* タイトルのフォントサイズを調整 */
+            text-align: left;
+        }
+
+        .nav {
+            display: flex;
+            gap: 15px;
+        }
+
+        .nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 16px; /* ボタンのフォントサイズを調整 */
+            padding: 5px 10px;
+            border: 1px solid white;
+            border-radius: 5px;
+        }
+
+        .nav a:hover {
+            background-color: white;
+            color: #0056b3;
+        }
+
+        section {
+            padding-right: 20px; /* 右のパディング */
+            padding-left: 20px; /* 左のパディング */
+        }
+
+        /* 一番上のセクションにのみ80pxのパディングトップを設定 */
+        section#top {
+            padding-top: 80px;
+        }
+
+        .company-description {
+            font-size: 18px;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        h2 {
+            font-size: 24px;
+            color: black; /* 色を黒に変更 */
+            margin-bottom: 20px;
+            border-bottom: 2px solid #0056b3;
+            padding-bottom: 10px;
+        }
+
+        .work-scenes {
+            display: flex;
+            justify-content: space-between;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+
+        .work-item {
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            width: 32%; /* 各写真の幅を均等に設定 */
+        }
+
+        .work-scenes img {
+            width: 100%; /* 親要素の幅に対して100%のサイズに設定 */
+            height: 300px; /* 高さを統一して300pxに設定 */
+            object-fit: cover; /* 画像の比率を保持しながらサイズ調整 */
+            border: 2px solid #0056b3; /* 濃い青色 */
+        }
+
+        .work-description {
+            margin-top: 10px;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        .company-overview {
+            margin-bottom: 40px;
+        }
+
+        .company-overview h2 {
+            font-size: 24px;
+            color: black; /* 色を黒に変更 */
+            border-bottom: 2px solid #0056b3; /* 青色の横線を復元 */
+            padding-bottom: 10px;
+        }
+
+        .company-info {
+            font-size: 18px;
+            line-height: 1.6;
+        }
+
+        footer {
+            background-color: #0056b3; /* 濃い青色 */
+            color: white;
+            text-align: center;
+            padding: 10px;
+        }
+
+        /* スマートフォンなどの小さな画面でのスタイル */
+        @media (max-width: 768px) {
+            .work-scenes {
+                flex-direction: column; /* 縦並びに変更 */
+            }
+
+            .work-item {
+                width: 100%; /* 幅を100%に拡大 */
+                margin-bottom: 20px;
+            }
+
+            .work-scenes img {
+                height: auto; /* 高さを自動にして、画像の比率を保持 */
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>〇〇解体業者</h1>
+        <div class="nav">
+            <a href="#top">ホーム</a> <!-- 一番上に飛ぶ -->
+            <a href="#services">業務内容</a> <!-- 業務内容に飛ぶ -->
+            <a href="#company-overview">会社概要</a> <!-- 会社概要に飛ぶ -->
+        </div>
+    </div>
+
+    <section id="top"> <!-- 一番上のsection要素にIDを設定 -->
+        <p class="company-description">
+            〇〇解体業者は、安全かつ効率的な解体工事を専門に行っています。<br>
+            お客様のニーズに応じた最適なソリューションを提供し、<br>
+            地域社会の信頼を得てまいりました。経験豊富なスタッフが、<br>
+            確実かつ迅速に解体作業を進めることをお約束します。
+        </p>
+    </section>
+
+    <section id="services"> <!-- 業務内容のセクションにIDを設定 -->
+        <h2>業務内容</h2>
+        <div class="work-scenes">
+            <div class="work-item">
+                <img src="./1.jpg" alt="作業風景1">
+                <div class="work-description">大型の解体機械で、構造物の取り壊し作業を効率的に進めています。熟練したオペレーターが安全に操作しています。現場のスピードと精度が求められる重要な作業です。</div>
+            </div>
+            <div class="work-item">
+                <img src="./2.jfif" alt="作業風景2">
+                <div class="work-description">解体現場での打ち合わせ風景。作業員同士が細部まで確認し、効率的かつ安全に作業を進めるための重要なコミュニケーションです。</div>
+            </div>
+            <div class="work-item">
+                <img src="./3.jfif" alt="作業風景3">
+                <div class="work-description">現場監督が作業の進捗を確認し、的確な指示を行っています。安全対策を徹底し、事故のない作業を目指します。</div>
+            </div>
+        </div>
+    </section>
+
+    <section id="company-overview"> <!-- 会社概要のセクションにIDを設定 -->
+        <div class="company-overview">
+            <h2>会社概要</h2>
+            <div class="company-info">
+                <p><strong>電話番号:</strong> 123-456-7890</p>
+                <p><strong>FAX番号:</strong> 098-765-4321</p>
+                <p><strong>所在地:</strong> 東京都千代田区〇〇ビル5F</p>
+                <p><strong>営業時間:</strong> 月〜金 9:00〜18:00</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="footer">
+        © 2024 〇〇解体業者
+    </footer>
+
+</body>
+</html>
