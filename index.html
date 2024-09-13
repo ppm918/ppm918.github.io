@@ -179,9 +179,9 @@
             <div></div>
         </div>
         <div class="nav" id="nav">
-            <a href="#top">ホーム</a> <!-- 一番上に飛ぶ -->
-            <a href="#services">業務内容</a> <!-- 業務内容に飛ぶ -->
-            <a href="#company-overview">会社概要</a> <!-- 会社概要に飛ぶ -->
+            <a href="#top" onclick="closeMenu()">ホーム</a> <!-- 一番上に飛ぶ -->
+            <a href="#services" onclick="closeMenu()">業務内容</a> <!-- 業務内容に飛ぶ -->
+            <a href="#company-overview" onclick="closeMenu()">会社概要</a> <!-- 会社概要に飛ぶ -->
         </div>
     </div>
 
@@ -232,6 +232,11 @@
         function toggleMenu() {
             const nav = document.getElementById('nav');
             nav.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
         }
     </script>
 
