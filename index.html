@@ -153,6 +153,11 @@
 
     <div class="header">
         <h1>〇〇解体業者</h1>
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
         <div class="nav">
             <a href="#top">ホーム</a> <!-- 一番上に飛ぶ -->
             <a href="#services">業務内容</a> <!-- 業務内容に飛ぶ -->
@@ -203,5 +208,16 @@
         © 2024 〇〇解体業者
     </footer>
 
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+
+        function closeMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.remove('active');
+        }
+    </script>
 </body>
 </html>
