@@ -100,19 +100,20 @@
             /* スマートフォンでの作業風景の縦並びスタイル */
             .work-scenes {
                 flex-direction: column; /* 縦並びに変更 */
+                padding: 0; /* パディングを削除 */
+                margin: 0; /* マージンを削除 */
             }
 
             .work-item {
                 width: 100%; /* 幅を100%に */
-                margin-bottom: 20px; /* 各項目に間隔を追加 */
+                margin: 0; /* 各項目に間隔を追加しない */
             }
 
             /* 写真と説明文を横幅いっぱいに広げる */
             .work-scenes img, .work-description {
                 width: 100%;
-            }
-            .work-scenes img {
-                height: auto; /* 高さを自動にして、画像の比率を保持 */
+                margin: 0; /* マージンを削除 */
+                padding: 0; /* パディングを削除 */
             }
         }
 
