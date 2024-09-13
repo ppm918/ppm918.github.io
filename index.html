@@ -38,6 +38,20 @@
             text-align: left;
         }
 
+        /* ハンバーガーメニューアイコンのスタイル */
+        .hamburger {
+            display: none; /* デフォルトで非表示 */
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .hamburger div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+        }
+
         .nav {
             display: flex;
             gap: 15px;
@@ -55,6 +69,28 @@
         .nav a:hover {
             background-color: white;
             color: #0056b3;
+        }
+
+        /* スマートフォン用メニュー表示 */
+        @media (max-width: 768px) {
+            .nav {
+                display: none; /* デフォルトで非表示 */
+                flex-direction: column;
+                background-color: #0056b3;
+                position: absolute;
+                top: 50px; /* ヘッダーの下に配置 */
+                right: 0;
+                width: 100%;
+                text-align: center;
+            }
+
+            .nav.active {
+                display: flex; /* メニューが開いた状態 */
+            }
+
+            .hamburger {
+                display: flex; /* ハンバーガーメニューを表示 */
+            }
         }
 
         section {
@@ -131,29 +167,18 @@
             text-align: center;
             padding: 10px;
         }
-
-        /* スマートフォンなどの小さな画面でのスタイル */
-        @media (max-width: 768px) {
-            .work-scenes {
-                flex-direction: column; /* 縦並びに変更 */
-            }
-
-            .work-item {
-                width: 100%; /* 幅を100%に拡大 */
-                margin-bottom: 20px;
-            }
-
-            .work-scenes img {
-                height: auto; /* 高さを自動にして、画像の比率を保持 */
-            }
-        }
     </style>
 </head>
 <body>
 
     <div class="header">
         <h1>〇〇解体業者</h1>
-        <div class="nav">
+        <div class="hamburger" onclick="toggleMenu()">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <div class="nav" id="nav">
             <a href="#top">ホーム</a> <!-- 一番上に飛ぶ -->
             <a href="#services">業務内容</a> <!-- 業務内容に飛ぶ -->
             <a href="#company-overview">会社概要</a> <!-- 会社概要に飛ぶ -->
@@ -202,6 +227,13 @@
     <footer id="footer">
         © 2024 〇〇解体業者
     </footer>
+
+    <script>
+        function toggleMenu() {
+            const nav = document.getElementById('nav');
+            nav.classList.toggle('active');
+        }
+    </script>
 
 </body>
 </html>
